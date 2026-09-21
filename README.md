@@ -45,5 +45,7 @@ flowchart TD
 #### Acceptance Criteria
 
 - **Given** a patient has a scheduled appointment,
-- **When** the patient selects a new available appointment time,
-- **Then** the system should update the appointment and display the updated appointment details.
+- **When** the patient requests a reschedule to a new appointment time less than 24 hours before the original appointment,
+- **Then** the system should apply a late-change flag,
+- **And** emit an `AppointmentRescheduled` event to the Notification Service,
+- **And** display a confirmation message with the updated appointment details.
